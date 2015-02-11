@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TAlex.Services.Commands.Undo
+namespace TAlex.Common.Services.Commands.Undo
 {
     /// <summary>
     /// Implements a unit that can be undone and redone.

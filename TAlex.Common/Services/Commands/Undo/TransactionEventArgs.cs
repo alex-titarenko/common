@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TAlex.Services.Commands.Undo
+namespace TAlex.Common.Services.Commands.Undo
 {
     public enum TransactionEventArgs
     {

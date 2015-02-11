@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TAlex.Services.Commands.Undo
+namespace TAlex.Common.Services.Commands.Undo
 {
     /// <summary>
     /// Represents manager of the undo/redo commands.
