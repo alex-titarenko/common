@@ -13,6 +13,6 @@
     <description>$description$</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2015 T-Alex Software</copyright>
-    <tags>UndoCommand</tags>
+    <tags>UndoCommand Extensions</tags>
   </metadata>
 </package>
