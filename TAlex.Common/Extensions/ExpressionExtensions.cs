@@ -91,5 +91,10 @@ namespace TAlex.Common.Extensions
         {
             return expression.GetPropertyName();
         }
+
+        public static string Get<T>(Expression<Func<T, object>> expression)
+        {
+            return expression.GetPropertyName();
+        }
     }
 }
