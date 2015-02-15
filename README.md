@@ -8,4 +8,4 @@
     Install-Package TAlex.Common
 
 ## License
-WPFControls is under the [MIT license](https://github.com/T-Alex/Common/blob/master/LICENSE.md).
+TAlex.Common is under the [MIT license](https://github.com/T-Alex/Common/blob/master/LICENSE.md).
