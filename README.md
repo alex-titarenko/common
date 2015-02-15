@@ -3,6 +3,12 @@
 
  Base class library for commonly occurring problems.
 
+## Features
+Extensions:
+* *Assembly*: get title, description, product, copyright, etc. of assembly.
+* *Expression*: get property name from expression.
+* *String*: split string by new line delimeter.
+
 ## Get it on NuGet!
 
     Install-Package TAlex.Common
