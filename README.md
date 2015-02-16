@@ -9,6 +9,9 @@
 * **Expression**: get property name from expression.
 * **String**: split string by newline delimeter.
 
+### Services:
+* **Undo**: provides ability to create undo/redo functionality in your apps.
+
 ## Get it on NuGet!
 
     Install-Package TAlex.Common
