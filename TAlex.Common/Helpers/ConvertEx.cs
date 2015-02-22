@@ -2,7 +2,7 @@
 using System.Text;
 
 
-namespace TAlex.Common
+namespace TAlex.Common.Helpers
 {
     /// <summary>
     /// Represents the extended methods for converting data types, such as bytes to string.

@@ -163,48 +163,6 @@ namespace TAlex.Common.Test.Extensions
 
         #endregion
 
-        #region SplitByLines Tests
-
-        [TestMethod]
-        public void SplitByLinesTest_LF()
-        {
-            //arrange
-            string text = "On July 4 2012, CERN announced the formal confirmation that a particle 'consistent with the Higgs boson' exists with a very high likelihood of 99.99994% (five sigma);\nhowever, scientists still need to verify that it is indeed the expected boson and not some other new particle.";
-
-            string[] expected = new string[]
-            {
-                "On July 4 2012, CERN announced the formal confirmation that a particle 'consistent with the Higgs boson' exists with a very high likelihood of 99.99994% (five sigma);",
-                "however, scientists still need to verify that it is indeed the expected boson and not some other new particle."
-            };
-
-            //act
-            string[] actual = text.SplitByLines();
-
-            //assert
-            CollectionAssert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void SplitByLinesTest_CRLF()
-        {
-            //arrange
-            string text = "The Higgs boson is an elementary particle within the Standard Model of particle physics.\r\nIt belongs to a class of particles known as bosons.";
-
-            string[] expected = new string[]
-            {
-                "The Higgs boson is an elementary particle within the Standard Model of particle physics.",
-                "It belongs to a class of particles known as bosons."
-            };
-
-            //act
-            string[] actual = text.SplitByLines();
-
-            //assert
-            CollectionAssert.AreEqual(expected, actual);
-        }
-
-        #endregion
-
         #region CamelToRegular Tests
 
         [TestMethod]

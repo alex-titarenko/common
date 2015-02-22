@@ -49,16 +49,6 @@ namespace TAlex.Common.Extensions
         }
 
         /// <summary>
-        /// Splits the string by new line separators.
-        /// </summary>
-        /// <param name="source">The source string to spliting.</param>
-        /// <returns>array of line strings.</returns>
-        public static string[] SplitByLines(this String source)
-        {
-            return NewLineRegex.Split(source);
-        }
-
-        /// <summary>
         /// Returns camel string in regular format.
         /// </summary>
         /// <param name="text">The source string for converting.</param>
