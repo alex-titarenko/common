@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions\ExpressionExtensionsTests.cs" />
+    <Compile Include="Extensions\ObjectExtensionsTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />
     <Compile Include="Helpers\ConvertExTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

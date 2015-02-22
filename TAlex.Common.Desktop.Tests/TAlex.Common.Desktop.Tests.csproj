@@ -58,7 +58,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\EnumerableSearchExtensionsTest.cs" />
     <Compile Include="Extensions\StringExtensionsTest.cs" />
-    <Compile Include="Extensions\ObjectExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TAlex.Common.Desktop\TAlex.Common.Desktop.csproj">

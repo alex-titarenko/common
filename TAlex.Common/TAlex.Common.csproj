@@ -39,6 +39,7 @@
   <ItemGroup>
     <Compile Include="Extensions\AssemblyExtensions.cs" />
     <Compile Include="Extensions\ExpressionExtensions.cs" />
+    <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\ConvertEx.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
