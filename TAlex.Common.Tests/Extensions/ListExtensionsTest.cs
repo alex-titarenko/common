@@ -2,46 +2,60 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using TAlex.Common.Extensions;
+using NUnit.Framework;
 
 
 namespace TAlex.Common.Test.Extensions
 {
-    [TestClass]
+    [TestFixture]
     public class ListExtensionsTest
     {
-        [TestMethod]
-        public void ShuffleTest()
+        #region Shuffle
+
+        [Test]
+        public void Shuffle_OrderedList_ShuffledList()
         {
+            //arrange
             List<int> orderedList = Enumerable.Range(1, 10).ToList();
             List<int> actual = Enumerable.Range(1, 10).ToList();
-
             CollectionAssert.AreEqual(orderedList, actual);
 
+            //action
             actual.Shuffle();
 
+            //assert
             CollectionAssert.AreNotEqual(orderedList, actual);
             CollectionAssert.AreEquivalent(orderedList, actual);
         }
 
-        [TestMethod]
-        public void ShuffleTest_OneElemen()
+        [Test]
+        public void Shuffle_OneElemen_OneElement()
         {
+            //arrange
             List<int> orderedList = new List<int>() { 5 };
             List<int> actual = new List<int>() { 5 };
 
+            //action
             actual.Shuffle();
+
+            //assert
             CollectionAssert.AreEqual(orderedList, actual);
         }
 
-        [TestMethod]
-        public void ShuffleTest_EmptyList()
+        [Test]
+        public void Shuffle_EmptyList_EmptyList()
         {
+            //arrange
             List<int> actual = new List<int>();
+
+            //action
             actual.Shuffle();
+
+            //assert
             Assert.IsTrue(actual.Count == 0);
         }
+
+        #endregion
     }
 }

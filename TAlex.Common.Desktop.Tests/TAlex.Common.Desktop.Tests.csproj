@@ -52,7 +52,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\ConfigurationHelperTest.cs" />
-    <Compile Include="Extensions\ListExtensionsTest.cs" />
     <Compile Include="Net\IPAddressRangeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Extensions\StringExtensionsTest.cs" />
