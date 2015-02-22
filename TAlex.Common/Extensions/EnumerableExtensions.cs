@@ -167,7 +167,7 @@ namespace TAlex.Common.Extensions
 
         private static Regex GetSearchPatternRegex(string pattern)
         {
-            return new Regex(pattern, RegexOptions.Compiled | RegexOptions.IgnoreCase);
+            return new Regex(pattern, RegexOptions.IgnoreCase);
         }
 
         private static bool IsOrMatch(T item, Regex searchRegex, IEnumerable<Func<T, object>> selectors)

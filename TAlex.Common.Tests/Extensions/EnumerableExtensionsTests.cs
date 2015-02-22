@@ -2,18 +2,36 @@
 using System.Text;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using TAlex.Common.Extensions;
+using NUnit.Framework;
 
 
 namespace TAlex.Common.Test.Extensions
 {
-    /// <summary>
-    /// Summary description for EnumerableExtensions
-    /// </summary>
-    [TestClass]
-    public class EnumerableSearchExtensionsTest
+    [TestFixture]
+    public class EnumerableExtensionsTests
+    {
+        #region Randomize
+
+        [Test]
+        public void Randomize_OrderedList_RandomizedList()
+        {
+            //arrange
+            List<int> orderedList = Enumerable.Range(1, 10).ToList();
+            
+            //action
+            List<int> randomizedList = orderedList.Randomize().ToList();
+
+            //assert
+            CollectionAssert.AreEquivalent(orderedList, randomizedList);
+            CollectionAssert.AreNotEqual(orderedList, randomizedList);
+        }
+
+        #endregion
+    }
+
+    [TestFixture]
+    public class EnumerableSearchExtensionsTests
     {
         private List<TestClass> _testCollection;
 
@@ -29,7 +47,7 @@ namespace TAlex.Common.Test.Extensions
         };
 
 
-        [TestInitialize]
+        [SetUp]
         public void Initialize()
         {
             _testCollection = new List<TestClass>()
@@ -43,305 +61,335 @@ namespace TAlex.Common.Test.Extensions
         }
 
 
-        /// <summary>
-        ///A test for Search
-        ///</summary>
-        [TestMethod()]
+        #region Search
+
+        [Test]
         [ExpectedException(typeof(NullReferenceException))]
-        public void SearchTest_NullQuery()
+        public void Search_NullQuery_ThrowNullReferenceException()
         {
+            //arrange
             string query = null;
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors);
+            
+            //assert
             Assert.AreEqual(0, actual.Count());
         }
 
-        /// <summary>
-        ///A test for Search
-        ///</summary>
-        [TestMethod()]
+        [Test]
         [ExpectedException(typeof(NullReferenceException))]
-        public void SearchTest_NullConditions()
+        public void Search_NullConditions_ThrowNullReferenceException()
         {
+            //arrange
             string query = "word";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, null);
+
+            //assert
             Assert.AreEqual(0, actual.Count());
         }
 
-        /// <summary>
-        ///A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_NullFieldValue()
+        [Test]
+        public void Search_NullFieldValue_SearchResult()
         {
+            //arrange
             string query = "text123456789";
             List<TestClass> coll = new List<TestClass>(_testCollection);
             coll.Add(new TestClass() { Integer = 5, Text = null });
+
+            //action
             IEnumerable<TestClass> actual = coll.Search(query, _allPropertySelectors);
 
+            //assert
             Assert.AreEqual(0, actual.Count());
         }
 
-        /// <summary>
-        ///A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_NullItem()
+        [Test]
+        public void Search_NullItem_SearchResult()
         {
+            //arrange
             string query = "text123456789";
             List<TestClass> coll = new List<TestClass>(_testCollection);
             coll.Add(null);
+
+            //action
             IEnumerable<TestClass> actual = coll.Search(query, _allPropertySelectors);
 
+            //assert
             Assert.AreEqual(0, actual.Count());
         }
 
-
-        /// <summary>
-        ///A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_NoResults()
+        [Test]
+        public void Search_NoResults_SearchResult()
         {
+            //arrange
             string query = "apple";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors);
 
+            //assert
             Assert.AreEqual(0, actual.Count());
         }
 
-        /// <summary>
-        ///A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_Success()
+        [Test]
+        public void Search_Success_SearchResult()
         {
+            //arrange
             string query = "text";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[1], actual.First());
         }
 
-        /// <summary>
-        ///A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_CaseSensitive()
+        [Test]
+        public void Search_CaseSensitive_SearchResult()
         {
+            //arrange
             string query = "TEST";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[0], actual.First());
         }
 
-        /// <summary>
-        ///A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_CleaningDelimiters()
+        [Test]
+        public void Search_CleaningDelimiters_SearchResult()
         {
+            //arrange
             string query = "energy";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors,
                 DefaultComplianceType.Strict);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[2], actual.First());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_NumericalSearch()
+        [Test]
+        public void Search_NumericalSearch_SearchResult()
         {
+            //arrange
             string query = "111";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[1], actual.First());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_WildcardQueryQuestionMark()
+        [Test]
+        public void Search_WildcardQueryQuestionMark_SearchResult()
         {
+            //arrange
             string query = "t?e";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors);
 
+            //assert
             Assert.AreEqual(2, actual.Count());
             Assert.AreEqual(_testCollection[1], actual.First());
             Assert.AreEqual(_testCollection[2], actual.ElementAt(1));
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_WildcardQueryAsteriskCharacter()
+        [Test]
+        public void Search_WildcardQueryAsteriskCharacter_SearchResult()
         {
+            //arrange
             string query = "total*";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[2], actual.First());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_ComplianceTypeBeginning()
+        [Test]
+        public void Search_ComplianceTypeBeginning_SearchResult()
         {
+            //arrange
             string query = "common includ ord";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors,
                 DefaultComplianceType.Beginning);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[2], actual.First());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_ComplianceTypeEnding()
+        [Test]
+        public void Search_ComplianceTypeEnding_SearchResult()
         {
+            //arrange
             string query = "ext includ ord";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors,
                 DefaultComplianceType.Ending);
 
+            //assert
             Assert.AreEqual(2, actual.Count());
             Assert.AreEqual(_testCollection[0], actual.First());
             Assert.AreEqual(_testCollection[1], actual.ElementAt(1));
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_ComplianceTypeOccurrence()
+        [Test]
+        public void Search_ComplianceTypeOccurrence_SearchResult()
         {
+            //arrange
             string query = "very";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors,
                 DefaultComplianceType.Occurrence);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[2], actual.First());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_ComplianceTypeStrict()
+        [Test]
+        public void Search_ComplianceTypeStrict_SearchResult()
         {
+            //arrange
             string query = "define";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors,
                 DefaultComplianceType.Strict);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[0], actual.First());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_DefaultOperatorOr()
+        [Test]
+        public void Search_DefaultOperatorOr_SearchResult()
         {
+            //arrange
             string query = "The totality";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors,
                 DefaultOperator.Or, DefaultComplianceType.Strict);
 
+            //assert
             Assert.AreEqual(2, actual.Count());
             Assert.AreEqual(_testCollection[1], actual.First());
             Assert.AreEqual(_testCollection[2], actual.ElementAt(1));
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_DefaultOperatorAnd()
+        [Test]
+        public void Search_DefaultOperatorAnd_SearchResult()
         {
+            //arrange
             string query = "is 111";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors, DefaultOperator.And, DefaultComplianceType.Strict);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_DefaultOperatorAndDirectOrderWord()
+        [Test]
+        public void Search_DefaultOperatorAndDirectOrderWord_SearchResult()
         {
+            //arrange
             string query = "The totality";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors,
                 DefaultOperator.And, DefaultComplianceType.Strict);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[2], actual.First());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_DefaultOperatorAndBackOrderWord()
+        [Test]
+        public void Search_DefaultOperatorAndBackOrderWord_SearchResult()
         {
+            //arrange
             string query = "totality as";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors,
                 DefaultOperator.And, DefaultComplianceType.Strict);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
             Assert.AreEqual(_testCollection[2], actual.First());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_DefaultOperatorAndNoResults()
+        [Test]
+        public void Search_DefaultOperatorAndNoResults_SearchResult()
         {
+            //arrange
             string query = "The totality text";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors,
                 DefaultOperator.And, DefaultComplianceType.Strict);
 
+            //assert
             Assert.AreEqual(0, actual.Count());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_SearchForDifferentField()
+        [Test]
+        public void Search_SearchForDifferentField_SearchResult()
         {
+            //arrange
             string query = "111";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _textPropertySelector);
 
+            //assert
             Assert.AreEqual(0, actual.Count());
         }
 
-        /// <summary>
-        /// A test for Search
-        ///</summary>
-        [TestMethod()]
-        public void SearchTest_EmailSearch()
+        [Test]
+        public void Search_EmailSearch_SearchResult()
         {
+            //arrange
             string query = "support@talex-soft.com";
+
+            //action
             IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors);
 
+            //assert
             Assert.AreEqual(1, actual.Count());
         }
 
+        #endregion
+
+        #region Design Datas
 
         private class TestClass
         {
             public int Integer { get; set; }
             public string Text { get; set; }
         }
+
+        #endregion
     }
 }
