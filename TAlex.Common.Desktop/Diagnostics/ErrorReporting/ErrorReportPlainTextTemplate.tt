@@ -1,0 +1,34 @@
+﻿<#@ template language="C#" #>
+<#@ import namespace="System.Globalization" #>
+<#@ import namespace="TAlex.Common.Diagnostics" #>
+<#@ import namespace="TAlex.Common.Environment" #>
+==System Information==
+Processor count: <#= Environment.ProcessorCount #>
+Processor architecture: <#= SystemInfo.Current.ProcessorArchitecture #>
+Total memory: <#= SystemInfo.Current.TotalPhysicalMemoryText #>
+Available memory: <#= SystemInfo.Current.AvailablePhysicalMemoryText #>
+
+==Environment Information==
+Current culture: <#= CultureInfo.CurrentCulture #>
+OS: <#= Environment.OSVersion #>
+Machine name: <#= Environment.MachineName #>
+
+==Process Information==
+Command line: <#= Environment.CommandLine #>
+Memory usage: <#= (ProcessInfo.Current.PrivateWorkingSet / 1024).ToString("N0") + " K" #>
+
+Error type: <#= Model.TargetException.GetType() #>
+Error source: <#= Model.TargetException.Source #>
+Target site: <#= Model.TargetException.TargetSite #>
+Error message: <#= Model.TargetException.Message #>
+Stack trace:
+<#= Model.TargetException.StackTrace #>
+<# if (Model.TargetException.InnerException != null) { #>
+Inner exception: <#= Model.TargetException.InnerException #>
+<# } #>
+<#+
+	/// <summary>
+    /// Gets or sets the model of error report.
+	/// </summary>
+	public ErrorReport Model { get; set; }
+#>
