@@ -54,7 +54,6 @@
     <Compile Include="Configuration\ConfigurationHelperTest.cs" />
     <Compile Include="Net\IPAddressRangeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Extensions\StringExtensionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TAlex.Common.Desktop\TAlex.Common.Desktop.csproj">

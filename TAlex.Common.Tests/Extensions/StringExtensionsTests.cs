@@ -53,5 +53,200 @@ namespace TAlex.Common.Tests.Extensions
         }
 
         #endregion
+
+        #region Cut
+
+        [Test]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Cut_NegativeLength_ThrowArgumentOutOfRangeException()
+        {
+            //arrange
+            string text = "If you spend too much time thinking about a thing, you'll never get it done.";
+            int length = -1;
+
+            //action
+            text.Cut(length);
+        }
+
+        [Test]
+        public void Cut_EmptyString_EmptyString()
+        {
+            //arrange
+            string text = String.Empty;
+            int length = 200;
+            string expected = String.Empty;
+
+            //act
+            string actual = text.Cut(length);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestCase("The universe is commonly defined as the totality of everything that exists, including all matter and energy", 30, "The universe is commonly")]
+        [TestCase("The possession of anything begins in the mind", 26, "The possession of anything")]
+        [TestCase("Knowledge will give you power, but character respect.", 29, "Knowledge will give you power")]
+        public void Cut_FullText_CuttedText(string text, int length, string expected)
+        {
+            //action
+            string actual = text.Cut(length);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Cut_FullText_CuttedTextWithEllipsis()
+        {
+            //arrange
+            string text = "The universe is commonly defined as the totality of everything that exists, including all matter and energy, the planets, stars, galaxies, and the contents of intergalactic space.";
+            int length = 30;
+            string expected = "The universe is commonly ...";
+
+            //action
+            string actual = text.Cut(length, true);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Cut_FullTextWithExcessLength_FullText()
+        {
+            //arrange
+            string text = "640K ought to be enough for anybody.";
+            int length = 200;
+            string expected = "640K ought to be enough for anybody.";
+
+            //action
+            string actual = text.Cut(length);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Cut_FullTextWithExcessLengthAddEllipsisTrue_FullTextWithoutEllipsis()
+        {
+            //arrange
+            string text = "640K ought to be enough for anybody.";
+            int length = 200;
+            string expected = "640K ought to be enough for anybody.";
+
+            //action
+            string actual = text.Cut(length, true);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Cut_FullTextWithComma_CuttedAndTrimmededTExt()
+        {
+            //arrange
+            string text = "If you love life, don't waste time, for time is what life is made up of.";
+            int length = 38;
+            string expected = "If you love life, don't waste time";
+
+            //action
+            string actual = text.Cut(length);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion
+
+        #region ExtractTextFromHtml
+
+        [Test]
+        public void ExtractTextFromHtml_HtmlText_RegularText()
+        {
+            //arrange
+            string text = "<p style=\"color:red\">Some <strong>text</strong></p>";
+            string expected = "Some  text";
+
+            //action
+            var actual = text.ExtractTextFromHtml();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion
+
+        #region CamelToRegular
+
+        [Test]
+        public void CamelToRegular_CamelText_RegularText()
+        {
+            //arrange
+            string text = "CamelText";
+            string expected = "Camel Text";
+
+            //action
+            string actual = StringExtensions.CamelToRegular(text);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void CamelToRegular_NullString_NullString()
+        {
+            //arrange
+            string text = null;
+            string expected = null;
+
+            //action
+            string actual = StringExtensions.CamelToRegular(text);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void CamelToRegular_EmptyString_EmptyString()
+        {
+            //arrange
+            string text = String.Empty;
+            string expected = String.Empty;
+
+            //action
+            string actual = StringExtensions.CamelToRegular(text);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void CamelToRegular_TextWithAbbreviation_RegularTextWithAbbreviation()
+        {
+            //arrange
+            string text = "TDDTest";
+            string expected = "TDD Test";
+
+            //action
+            string actual = StringExtensions.CamelToRegular(text);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void CamelToRegular_OnlyAbbreviation_Abbreviation()
+        {
+            //arrange
+            string text = "SDK";
+            string expected = "SDK";
+
+            //action
+            string actual = StringExtensions.CamelToRegular(text);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion
     }
 }

@@ -70,8 +70,6 @@
     <Compile Include="Environment\ApplicationInfo.cs" />
     <Compile Include="Diagnostics\ProcessInfo.cs" />
     <Compile Include="Environment\SystemInfo.cs" />
-    <Compile Include="Extensions\MaybeMonadExtensions.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Licensing\CryptoHelper.cs" />
     <Compile Include="Licensing\ILicenseDataManager.cs" />
     <Compile Include="Licensing\LicenseBase.cs" />
