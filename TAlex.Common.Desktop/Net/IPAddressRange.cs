@@ -11,7 +11,13 @@ namespace TAlex.Common.Net
     /// </summary>
     public class IPAddressRange
     {
+        #region Fields
+
         internal static readonly string[] IPRangeDelimeters = new string[] { "-", "/" };
+
+        #endregion
+
+        #region Properties
 
         /// <summary>
         /// Gets or sets the lower bound of ip addresses range.
@@ -22,6 +28,8 @@ namespace TAlex.Common.Net
         /// Gets or sets the upper bound of ip addresses range.
         /// </summary>
         public IPAddress Upper { get; set; }
+
+        #endregion
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TAlex.Common.Net.IPAddressRange"/> class by using
