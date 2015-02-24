@@ -49,7 +49,6 @@
     <Compile Include="Configuration\ConfigurationHelper.cs" />
     <Compile Include="Configuration\XmlSettingsProvider.cs" />
     <Compile Include="Configuration\XmlSettingsProviderSection.cs" />
-    <Compile Include="Consoles\ConsoleEx.cs" />
     <Compile Include="Diagnostics\ErrorReporting\ErrorReportModel.cs" />
     <Compile Include="Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.cs">
       <AutoGen>True</AutoGen>
