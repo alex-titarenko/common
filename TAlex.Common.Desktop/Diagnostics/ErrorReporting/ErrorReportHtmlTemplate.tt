@@ -1,7 +1,9 @@
 ﻿<#@ template language="C#" #>
 <#@ import namespace="System.Globalization" #>
+<#@ import namespace="System.Reflection" #>
 <#@ import namespace="TAlex.Common.Diagnostics" #>
 <#@ import namespace="TAlex.Common.Environment" #>
+<#@ import namespace="TAlex.Common.Extensions" #>
 
 <html>
 	<head>
@@ -22,7 +24,7 @@
 	</head>
 
 	<body>
-		<h3>Error report summary: <#= ApplicationInfo.Current.Title + " " + ApplicationInfo.Current.Version #></h2>
+		<h3>Error report summary: <#= Assembly.GetEntryAssembly().GetTitle() + " " + Assembly.GetEntryAssembly().GetVersion() #></h2>
 
 		<p>
 			<h4>System Information</h4>

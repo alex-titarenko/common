@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+using TAlex.Common.Extensions;
 using TAlex.Common.Environment;
 
 
@@ -27,7 +29,8 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
         {
             get
             {
-                return String.Format("#APPLICATION_ERROR: {0} {1}", ApplicationInfo.Current.Title, ApplicationInfo.Current.Version);
+                var assemblyInfo = Assembly.GetEntryAssembly().GetAssemblyInfo();
+                return String.Format("#APPLICATION_ERROR: {0} {1}", assemblyInfo.Title, assemblyInfo.Version);
             }
         }
 

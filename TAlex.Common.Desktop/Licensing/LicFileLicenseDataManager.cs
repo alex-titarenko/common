@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Security.Cryptography;
 using System.Text;
+using TAlex.Common.Extensions;
 
 
 namespace TAlex.Common.Licensing
@@ -37,11 +39,13 @@ namespace TAlex.Common.Licensing
         {
             get
             {
+                var assemblyInfo = Assembly.GetEntryAssembly().GetAssemblyInfo();
+
                 return Path.Combine(
                     System.Environment.GetFolderPath(System.Environment.SpecialFolder.CommonApplicationData),
-                    Environment.ApplicationInfo.Current.Company,
-                    Environment.ApplicationInfo.Current.Product,
-                    String.Format("v{0}", Environment.ApplicationInfo.Current.Version.Major),
+                    assemblyInfo.Company,
+                    assemblyInfo.Product,
+                    String.Format("v{0}", assemblyInfo.Version.Major),
                     DefaultLicenseFilePath);
             }
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using TAlex.Common.Models;
 
 
 namespace TAlex.Common.Extensions
@@ -29,6 +30,8 @@ namespace TAlex.Common.Extensions
         /// <summary>
         /// Returns the assembly's title.
         /// </summary>
+        /// <param name="assembly">A target assembly.</param>
+        /// <returns>title of assembly.</returns>
         public static string GetTitle(this Assembly assembly)
         {
             return GetAssemblyProperty<AssemblyTitleAttribute>(assembly, TitlePropertyName);
@@ -37,6 +40,8 @@ namespace TAlex.Common.Extensions
         /// <summary>
         /// Returns the assembly's description.
         /// </summary>
+        /// <param name="assembly">A target assembly.</param>
+        /// <returns>descriptions of assembly.</returns>
         public static string GetDescription(this Assembly assembly)
         {
             return GetAssemblyProperty<AssemblyDescriptionAttribute>(assembly, DescriptionPropertyName);
@@ -45,6 +50,8 @@ namespace TAlex.Common.Extensions
         /// <summary>
         /// Returns the assembly's company.
         /// </summary>
+        /// <param name="assembly">A target assembly.</param>
+        /// <returns>company name of assembly.</returns>
         public static string GetCompany(this Assembly assembly)
         {
             return GetAssemblyProperty<AssemblyCompanyAttribute>(assembly, CompanyPropertyName);
@@ -53,6 +60,8 @@ namespace TAlex.Common.Extensions
         /// <summary>
         /// Returns the assembly's product.
         /// </summary>
+        /// <param name="assembly">A target assembly.</param>
+        /// <returns>product of assembly.</returns>
         public static string GetProduct(this Assembly assembly)
         {
             return GetAssemblyProperty<AssemblyProductAttribute>(assembly, ProductPropertyName);
@@ -61,6 +70,8 @@ namespace TAlex.Common.Extensions
         /// <summary>
         /// Returns the assembly's copyright.
         /// </summary>
+        /// <param name="assembly">A target assembly.</param>
+        /// <returns>copyright of assembly.</returns>
         public static string GetCopyright(this Assembly assembly)
         {
             return GetAssemblyProperty<AssemblyCopyrightAttribute>(assembly, CopyrightPropertyName);
@@ -69,6 +80,8 @@ namespace TAlex.Common.Extensions
         /// <summary>
         /// Returns the assembly's trademark.
         /// </summary>
+        /// <param name="assembly">A target assembly.</param>
+        /// <returns>trademark of assembly.</returns>
         public static string GetTrademark(this Assembly assembly)
         {
             return GetAssemblyProperty<AssemblyTrademarkAttribute>(assembly, TrademarkPropertyName);
@@ -77,9 +90,21 @@ namespace TAlex.Common.Extensions
         /// <summary>
         /// Returns the assembly's version.
         /// </summary>
+        /// <param name="assembly">A target assembly.</param>
+        /// <returns>version of assembly.</returns>
         public static Version GetVersion(this Assembly assembly)
         {
             return assembly.GetName().Version;
+        }
+
+        /// <summary>
+        /// returns the assembly's info.
+        /// </summary>
+        /// <param name="assembly">A target assembly.</param>
+        /// <returns>assembly info.</returns>
+        public static AssemblyInfo GetAssemblyInfo(this Assembly assembly)
+        {
+            return new AssemblyInfo(assembly);
         }
 
         #endregion

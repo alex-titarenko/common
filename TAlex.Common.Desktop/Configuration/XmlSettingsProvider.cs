@@ -12,6 +12,7 @@ using System.Reflection;
 using System.Security.Permissions;
 using System.Globalization;
 using TAlex.Common.Environment;
+using TAlex.Common.Extensions;
 
 
 namespace TAlex.Common.Configuration
@@ -682,7 +683,7 @@ namespace TAlex.Common.Configuration
 
                 if (String.IsNullOrEmpty(str))
                 {
-                    Version currentVersion = ApplicationInfo.Current.Version;
+                    Version currentVersion = Assembly.GetEntryAssembly().GetVersion();
 
                     if (currentVersion == null)
                     {
@@ -737,10 +738,12 @@ namespace TAlex.Common.Configuration
 
             public string GetAppSettingsPath()
             {
+                var assemblyInfo = Assembly.GetEntryAssembly().GetAssemblyInfo();
+
                 string fullPath = Path.GetFullPath(System.Environment.GetCommandLineArgs()[0]);
                 string fileName = Path.GetFileName(fullPath);
 
-                string manufacturer = ApplicationInfo.Current.Company;
+                string manufacturer = assemblyInfo.Company;
                 if (!String.IsNullOrEmpty(manufacturer)) manufacturer = manufacturer.Replace(' ', '_');
 
                 string urlHash = ComputeHash(fullPath);
@@ -751,7 +754,7 @@ namespace TAlex.Common.Configuration
                     System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData),
                     !String.IsNullOrEmpty(manufacturer) ? manufacturer : Assembly.GetEntryAssembly().GetName().Name,
                     String.Format("{0}_Url_{1}", fileName, urlHash),
-                    ApplicationInfo.Current.Version.ToString());
+                    assemblyInfo.Version.ToString());
             }
 
             #endregion
