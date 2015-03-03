@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("TAlex.Common.Diagnostics")]
-[assembly: AssemblyDescription("Error reporting service.")]
+[assembly: AssemblyDescription("Set of diagnostic tools.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("T-Alex Software")]
 [assembly: AssemblyProduct("TAlex.Common.Diagnostics")]
