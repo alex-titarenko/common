@@ -32,6 +32,7 @@ private class SimpleModel
 ## Get it on NuGet!
 
     Install-Package TAlex.Common
+    Install-Package TAlex.Common.Diagnostics
 
 ## License
 TAlex.Common is under the [MIT license](https://github.com/T-Alex/Common/blob/master/LICENSE.md).
