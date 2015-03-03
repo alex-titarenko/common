@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using TAlex.Common.Helpers;
 
 
-namespace TAlex.Common.Environment
+namespace TAlex.Common.Diagnostics
 {
     /// <summary>
     /// Provides the information about system, such as total physical memory,

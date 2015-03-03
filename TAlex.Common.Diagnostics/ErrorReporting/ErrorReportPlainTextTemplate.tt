@@ -1,7 +1,6 @@
 ﻿<#@ template language="C#" #>
 <#@ import namespace="System.Globalization" #>
 <#@ import namespace="TAlex.Common.Diagnostics" #>
-<#@ import namespace="TAlex.Common.Environment" #>
 ==System Information==
 Processor count: <#= Environment.ProcessorCount #>
 Processor architecture: <#= SystemInfo.Current.ProcessorArchitecture #>

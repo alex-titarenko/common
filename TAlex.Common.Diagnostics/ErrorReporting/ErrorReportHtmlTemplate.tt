@@ -2,7 +2,6 @@
 <#@ import namespace="System.Globalization" #>
 <#@ import namespace="System.Reflection" #>
 <#@ import namespace="TAlex.Common.Diagnostics" #>
-<#@ import namespace="TAlex.Common.Environment" #>
 <#@ import namespace="TAlex.Common.Extensions" #>
 
 <html>

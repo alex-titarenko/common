@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Reflection;
 using TAlex.Common.Extensions;
-using TAlex.Common.Environment;
 
 
 namespace TAlex.Common.Diagnostics.ErrorReporting

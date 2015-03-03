@@ -13,6 +13,10 @@
     <description>$description$</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2015 T-Alex Software</copyright>
-    <tags>UndoCommand Extensions Assembly Info</tags>
+    <tags>Diagnostic Error Report Time Measurement</tags>
+
+    <dependencies>
+		<dependency id="TAlex.Common" />
+	</dependencies>
   </metadata>
 </package>
