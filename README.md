@@ -33,6 +33,7 @@ private class SimpleModel
 
     Install-Package TAlex.Common
     Install-Package TAlex.Common.Diagnostics
+    Install-Package TAlex.Common.Configuration
 
 ## License
 TAlex.Common is under the [MIT license](https://github.com/T-Alex/Common/blob/master/LICENSE.md).
