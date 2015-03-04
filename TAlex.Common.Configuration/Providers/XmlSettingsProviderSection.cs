@@ -5,17 +5,17 @@ using System.Text;
 using System.Configuration;
 
 
-namespace TAlex.Common.Configuration
+namespace TAlex.Common.Configuration.Providers
 {
     /// <summary>
-    /// Represents the <see cref="TAlex.Common.Configuration.XmlSettingsProvider"/> section within a configuration file.
+    /// Represents the <see cref="TAlex.Common.Configuration.Providers.XmlSettingsProvider"/> section within a configuration file.
     /// </summary>
     public class XmlSettingsProviderSection : ConfigurationSection
     {
         internal const string IsPortableSettingsPropName = "IsPortableSettings";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TAlex.Common.Configuration.XmlSettingsProviderSection"/> class.
+        /// Initializes a new instance of the <see cref="TAlex.Common.Configuration.Providers.XmlSettingsProviderSection"/> class.
         /// </summary>
         public XmlSettingsProviderSection()
         {

@@ -14,7 +14,7 @@ using System.Globalization;
 using TAlex.Common.Extensions;
 
 
-namespace TAlex.Common.Configuration
+namespace TAlex.Common.Configuration.Providers
 {
     /// <summary>
     /// Provides persistence for application settings classes in xml file.
@@ -34,7 +34,7 @@ namespace TAlex.Common.Configuration
         /// <?xml version="1.0"?>
         /// <configuration>
         ///     <configSections>
-        ///         <section name="xmlSettingsProvider" type="TAlex.Common.Configuration.XmlSettingsProviderSection, TAlex.Common" />
+        ///         <section name="xmlSettingsProvider" type="TAlex.Common.Configuration.Providers.XmlSettingsProviderSection, TAlex.Common" />
         ///     </configSections>
         ///     <xmlSettingsProvider IsPortableSettings="True" />
         /// </configuration>
@@ -165,7 +165,7 @@ namespace TAlex.Common.Configuration
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TAlex.Common.Configuration.XmlSettingsProvider"/> class.
+        /// Initializes a new instance of the <see cref="TAlex.Common.Configuration.Providers.XmlSettingsProvider"/> class.
         /// </summary>
         public XmlSettingsProvider()
         {
