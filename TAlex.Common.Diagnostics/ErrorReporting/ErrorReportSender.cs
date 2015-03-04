@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -12,6 +13,9 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
 {
     public class ErrorReportSender : IErrorReportSender
     {
+        protected static readonly string ErrorReportUrlConfigKey = "TAlexConfiguration_ErrorReportUrl";
+
+
         #region IErrorReportSender Members
 
         public void Send(ErrorReportModel report)
@@ -25,11 +29,17 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
 
         private HttpWebRequest CreateRequest()
         {
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create("http://talex-soft.com/api/ErrorReporting/Send");
-            request.Method = "POST";
-            request.ContentType = "application/json";
+            var url = ConfigurationManager.AppSettings[ErrorReportUrlConfigKey];
 
-            return request;
+            if (!String.IsNullOrEmpty(url))
+            {
+                HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+                request.Method = "POST";
+                request.ContentType = "application/json";
+
+                return request;
+            }
+            throw new Exception("Url for reporting is not specified.");
         }
 
         private void SendReport(HttpWebRequest request, byte[] bytes)
