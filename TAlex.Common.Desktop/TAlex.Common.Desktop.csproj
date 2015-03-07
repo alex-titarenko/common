@@ -46,13 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Licensing\CryptoHelper.cs" />
-    <Compile Include="Licensing\ILicenseDataManager.cs" />
-    <Compile Include="Licensing\LicenseBase.cs" />
-    <Compile Include="Licensing\ITrialPeriodDataProvider.cs" />
-    <Compile Include="Licensing\LicenseData.cs" />
-    <Compile Include="Licensing\LicFileLicenseDataManager.cs" />
-    <Compile Include="Licensing\SecretFileTrialPeriodDataProvider.cs" />
     <Compile Include="Net\IPAddressRange.cs" />
     <Compile Include="Net\Mail\IMailService.cs" />
     <Compile Include="Net\Mail\MailService.cs" />
