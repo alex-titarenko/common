@@ -4,110 +4,152 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Globalization;
 using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
 using TAlex.Common.Configuration;
+using NUnit.Framework;
 
 
-namespace TAlex.Common.Test.Configuration
+namespace TAlex.Common.Configuration.Tests
 {
-    [TestClass]
-    public class ConfigurationHelperTest
+    [TestFixture]
+    public class ConfigurationHelperTests
     {
-        [TestMethod]
-        public void Get_MissingConfiguration()
+        #region Get
+
+        [Test]
+        public void Get_MissingConfiguration_Null()
         {
+            //action
             string actual = ConfigurationHelper.Get("UnknownSetting");
+
+            //assert
             Assert.IsNull(actual);
         }
 
-        [TestMethod]
+        [Test]
         [ExpectedException(typeof(InvalidCastException))]
-        public void Get_TypedMissingConfiguration()
+        public void Get_TypedMissingConfiguration_ThrowInvalidCastException()
         {
+            //action
             int actual = ConfigurationHelper.Get<int>("UnknownSetting");
+
+            //assert
             Assert.IsNull(actual);
         }
 
-        [TestMethod]
-        public void Get_String()
+        [Test]
+        public void Get_StringSetting_String()
         {
+            //arrange
             string expected = "Some String";
+
+            //action
             string actual = ConfigurationHelper.Get("StringSetting");
 
+            //assert
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void Get_Int()
+        [Test]
+        public void Get_IntSetting_Int()
         {
+            //arrange
             int expected = 35;
+
+            //action
             int actual = ConfigurationHelper.Get<int>("IntSetting");
 
+            //assert
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void Get_Double()
+        [Test]
+        public void Get_DoubleSetting_Double()
         {
-            double expected = 36.262;
-            double actual = ConfigurationHelper.Get<double>("DoubleSetting");
-
-            Assert.AreEqual(expected, actual);
-        }
-
-        [TestMethod]
-        public void Get_WithDifferentCultures()
-        {
+            //arrange
             double expected = 36.262;
 
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
+            //action
             double actual = ConfigurationHelper.Get<double>("DoubleSetting");
-            Assert.AreEqual(expected, actual);
 
-            Thread.CurrentThread.CurrentCulture = new CultureInfo("ru-RU");
-            actual = ConfigurationHelper.Get<double>("DoubleSetting");
+            //assert
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void Get_DateTime()
+        [TestCase("en-US")]
+        [TestCase("ru-RU")]
+        public void Get_DoubleSettingAndDifferentCurrentThreadCulture_Double(string culture)
         {
+            //arrange
+            double expected = 36.262;
+            Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+            
+            //action
+            double actual = ConfigurationHelper.Get<double>("DoubleSetting");
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Get_DateTimeSetting_DateTime()
+        {
+            //arrange
             DateTime expected = new DateTime(2012, 11, 23);
+            
+            //action
             DateTime actual = ConfigurationHelper.Get<DateTime>("DateTimeSetting");
 
+            //assert
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void Get_Boolean()
+        [Test]
+        public void Get_BooleanSetting_Boolean()
         {
+            //arrange
             bool expected = true;
+
+            //action
             bool actual = ConfigurationHelper.Get<bool>("BooleanSetting");
 
+            //assert
             Assert.AreEqual(expected, actual);
         }
 
-        [TestMethod]
-        public void TryGet_Success()
+        #endregion
+
+        #region TryGet
+
+        [Test]
+        public void TryGet_IntSetting_TrueAndInt()
         {
+            //arrange
             int expected = 35;
             int actual;
+            
+            //action
             bool success = ConfigurationHelper.TryGet<int>("IntSetting", out actual);
 
+            //assert
             Assert.AreEqual(expected, actual);
             Assert.IsTrue(success);
         }
 
-        [TestMethod]
-        public void TryGet_Fail()
+        [Test]
+        public void TryGet_UnknownSetting_FalseAndZero()
         {
+            //arrange
             int expected = 0;
             int actual;
+
+            //action
             bool success = ConfigurationHelper.TryGet<int>("UnknownSetting", out actual);
 
+            //assert
             Assert.AreEqual(expected, actual);
             Assert.IsFalse(success);
         }
+
+        #endregion
     }
 }

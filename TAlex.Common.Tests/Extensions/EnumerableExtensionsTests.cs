@@ -6,7 +6,7 @@ using TAlex.Common.Extensions;
 using NUnit.Framework;
 
 
-namespace TAlex.Common.Test.Extensions
+namespace TAlex.Common.Tests.Extensions
 {
     [TestFixture]
     public class EnumerableExtensionsTests

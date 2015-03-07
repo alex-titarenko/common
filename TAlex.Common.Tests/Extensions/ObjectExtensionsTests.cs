@@ -3,7 +3,7 @@ using NUnit.Framework;
 using TAlex.Common.Extensions;
 
 
-namespace TAlex.Common.Test.Extensions
+namespace TAlex.Common.Tests.Extensions
 {
     [TestFixture]
     public class ObjectExtensionsTest
