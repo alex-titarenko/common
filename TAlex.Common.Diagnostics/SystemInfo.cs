@@ -102,6 +102,39 @@ namespace TAlex.Common.Diagnostics
             }
         }
 
+        /// <summary>
+        /// Gets the size of used physical memory, in bytes.
+        /// </summary>
+        public virtual ulong UsedPhysicalMemory
+        {
+            get
+            {
+                return (TotalPhysicalMemory - AvailablePhysicalMemory);
+            }
+        }
+
+        /// <summary>
+        /// Gets the size of used physical memory, string representation.
+        /// </summary>
+        public virtual string UsedPhysicalMemoryText
+        {
+            get
+            {
+                return ConvertEx.BytesToDisplayString((long)UsedPhysicalMemory);
+            }
+        }
+
+        /// <summary>
+        /// Gets the rate of usage of physical memory.
+        /// </summary>
+        public virtual double PhysicalMemoryUsage
+        {
+            get
+            {
+                return UsedPhysicalMemory / (double)TotalPhysicalMemory;
+            }
+        }
+
         #endregion
 
         #region Constructors
