@@ -11,8 +11,7 @@
 [Dd]ebugPublic/
 [Rr]elease/
 x64/
-build/
-_[Bb]uild/
+[Bb]uild/
 bld/
 [Bb]in/
 [Oo]bj/
