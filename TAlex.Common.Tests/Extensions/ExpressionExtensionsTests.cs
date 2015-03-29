@@ -32,13 +32,32 @@ namespace TAlex.Common.Tests.Extensions
 
         #endregion
 
-        #region GetPropertyName
+        #region GetPropertyName<TModel>(this Expression<Func<TModel, object>> expression)
+
+        [Test]
+        public void GetPropertyName_ExpressionForModel_PropertyName()
+        {
+            Expression<Func<SimpleModel, object>> expr = x => x.Text;
+            string expected = "Text";
+
+            //action
+            string actual = expr.GetPropertyName();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion
+
+        #region GetPropertyName<T>(this Expression<Func<T>> propertyExpression)
 
         [Test]
         public void GetPropertyName_Expression_PropertyName()
         {
             //arrange
-            Expression<Func<SimpleModel, object>> expr = x => x.Text;
+            var model = new SimpleModel();
+
+            Expression<Func<string>> expr = () => model.Text;
             string expected = "Text";
 
             //action

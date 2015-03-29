@@ -33,8 +33,7 @@ namespace TAlex.Common.Extensions
             PropertyInfo property = null;
             if (op != null)
             {
-                MemberInfo member = op.Member;
-                property = typeof(TModel).GetTypeInfo().GetDeclaredProperty(member.Name);
+                property = op.Member as PropertyInfo;
 
                 if (property == null)
                 {
