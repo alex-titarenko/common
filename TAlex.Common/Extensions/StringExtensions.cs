@@ -73,5 +73,15 @@ namespace TAlex.Common.Extensions
 
             return CamelTextRegex.Replace(text, (m) => " " + m.Value);
         }
+
+        /// <summary>
+        /// Returns encoded html string. Can be used as anti-spam email encoder.
+        /// </summary>
+        /// <param name="source">The source string for encode</param>
+        /// <returns>encoded html string.</returns>
+        public static string EncodeHtml(this String source)
+        {
+            return String.Join(String.Empty, source.Cast<char>().Select(x => String.Format("&#{0:D3};", (int)x)));
+        }
     }
 }

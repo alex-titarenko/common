@@ -248,5 +248,19 @@ namespace TAlex.Common.Tests.Extensions
         }
 
         #endregion
+
+        #region EncodeHtml
+
+        [TestCase("email@domain.com", "&#101;&#109;&#097;&#105;&#108;&#064;&#100;&#111;&#109;&#097;&#105;&#110;&#046;&#099;&#111;&#109;")]
+        public void EncodeHtml_SourceString_EncodedString(string source, string expected)
+        {
+            //action
+            var actual = source.EncodeHtml();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion
     }
 }
