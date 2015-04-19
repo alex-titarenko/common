@@ -95,12 +95,13 @@ namespace TAlex.Common.Tests.Extensions
             Assert.AreEqual(expected, actual);
         }
 
-        [Test]
-        public void Cut_FullText_CuttedTextWithEllipsis()
+        [TestCase(30)]
+        [TestCase(26)]
+        [TestCase(24)]
+        public void Cut_FullText_CuttedTextWithEllipsis(int length)
         {
             //arrange
             string text = "The universe is commonly defined as the totality of everything that exists, including all matter and energy, the planets, stars, galaxies, and the contents of intergalactic space.";
-            int length = 30;
             string expected = "The universe is commonly ...";
 
             //action

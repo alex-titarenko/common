@@ -53,7 +53,7 @@ namespace TAlex.Common.Extensions
             }
 
             string result = source.Substring(0, removeIndex + 1).Trim().TrimEnd(',');
-            return (result.Length < length && addEllipsis) ? result + " ..." : result;
+            return (result.Length < source.Length && addEllipsis) ? result + " ..." : result;
         }
 
         public static string ExtractTextFromHtml(this String source)
