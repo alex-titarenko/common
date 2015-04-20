@@ -112,6 +112,20 @@ namespace TAlex.Common.Tests.Extensions
         }
 
         [Test]
+        public void Cut_FullTextWithPunctuation_CuttedTextWithEllipsis()
+        {
+            //arrange
+            string text = "The Universe is the totality of existence. This includes planets, stars, galaxies, the contents of intergalactic space, the smallest subatomic particles, and all matter and energy, the majority of which are most likely in the form of dark matter and dark energy.";
+            string expected = "The Universe is the totality of existence ...";
+
+            //action
+            string actual = text.Cut(41, true);
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
         public void Cut_FullTextWithExcessLength_FullText()
         {
             //arrange

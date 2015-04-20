@@ -43,16 +43,21 @@ namespace TAlex.Common.Extensions
             if (String.IsNullOrEmpty(source) || length >= source.Length)
                 return source;
 
+            string result = null;
             if (Char.IsPunctuation(source[length]))
-                return source.Substring(0, length);
-
-            int removeIndex;
-            for (removeIndex = length; removeIndex >= 0; removeIndex--)
             {
-                if (Char.IsWhiteSpace(source[removeIndex])) break;
+                result = source.Substring(0, length);
+            }
+            else
+            {
+                int removeIndex;
+                for (removeIndex = length; removeIndex >= 0; removeIndex--)
+                {
+                    if (Char.IsWhiteSpace(source[removeIndex])) break;
+                }
+                result = source.Substring(0, removeIndex + 1).Trim().TrimEnd(',');
             }
 
-            string result = source.Substring(0, removeIndex + 1).Trim().TrimEnd(',');
             return (result.Length < source.Length && addEllipsis) ? result + " ..." : result;
         }
 
