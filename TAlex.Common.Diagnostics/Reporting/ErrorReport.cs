@@ -3,7 +3,7 @@ using System.Reflection;
 using TAlex.Common.Extensions;
 
 
-namespace TAlex.Common.Diagnostics.ErrorReporting
+namespace TAlex.Common.Diagnostics.Reporting
 {
     /// <summary>
     /// Represents the model of the error report.
@@ -38,7 +38,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="TAlex.Common.Diagnostics.ErrorReporting.ErrorReport"/> class.
+        /// Initializes a new instance of the <see cref="TAlex.Common.Diagnostics.Reporting.ErrorReport"/> class.
         /// </summary>
         /// <param name="exception">The target exception for which to get a report.</param>
         public ErrorReport(Exception exception)

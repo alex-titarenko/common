@@ -1,4 +1,4 @@
-﻿namespace TAlex.Common.Diagnostics.ErrorReporting
+﻿namespace TAlex.Common.Diagnostics.Reporting
 {
     public interface IErrorReportSender
     {

@@ -41,22 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ErrorReporting\ErrorReport.cs" />
-    <Compile Include="ErrorReporting\ErrorReportHtmlTemplate.cs">
+    <Compile Include="Reporting\ErrorReport.cs" />
+    <Compile Include="Reporting\ErrorReportHtmlTemplate.cs">
       <DependentUpon>ErrorReportHtmlTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="ErrorReporting\ErrorReportModel.cs" />
-    <Compile Include="ErrorReporting\ErrorReportPlainTextTemplate.cs">
+    <Compile Include="Reporting\ErrorReportModel.cs" />
+    <Compile Include="Reporting\ErrorReportPlainTextTemplate.cs">
       <DependentUpon>ErrorReportPlainTextTemplate.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="ErrorReporting\ErrorReportSender.cs" />
-    <Compile Include="ErrorReporting\IErrorReportSender.cs" />
+    <Compile Include="Reporting\ErrorReportSender.cs" />
+    <Compile Include="Reporting\IErrorReportSender.cs" />
     <Compile Include="ExceptionInfo.cs" />
-    <Compile Include="Listeners\DailyTraceListenerWrapper.cs" />
+    <Compile Include="Logging\Listeners\DailyTraceListenerWrapper.cs" />
     <Compile Include="Logging\Data\DateTimeRange.cs" />
     <Compile Include="Logging\Data\LogItem.cs" />
     <Compile Include="Logging\Data\LogItemType.cs" />
@@ -70,11 +70,11 @@
     <Compile Include="TimeMeasurement.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ErrorReporting\ErrorReportHtmlTemplate.tt">
+    <None Include="Reporting\ErrorReportHtmlTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ErrorReportHtmlTemplate.cs</LastGenOutput>
     </None>
-    <None Include="ErrorReporting\ErrorReportPlainTextTemplate.tt">
+    <None Include="Reporting\ErrorReportPlainTextTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ErrorReportPlainTextTemplate.cs</LastGenOutput>
     </None>

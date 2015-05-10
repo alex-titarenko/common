@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 
 
-namespace TAlex.Common.Diagnostics.Listeners
+namespace TAlex.Common.Diagnostics.Logging.Listeners
 {
     /// <summary>
     /// Represents the wrapper for <see cref="TextWriterTraceListener"/> allowing to create daily log files.

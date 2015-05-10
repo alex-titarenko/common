@@ -9,7 +9,7 @@ using System.Text;
 using System.Web.Script.Serialization;
 
 
-namespace TAlex.Common.Diagnostics.ErrorReporting
+namespace TAlex.Common.Diagnostics.Reporting
 {
     public class ErrorReportSender : IErrorReportSender
     {

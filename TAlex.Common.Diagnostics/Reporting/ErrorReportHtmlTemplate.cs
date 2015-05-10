@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace TAlex.Common.Diagnostics.ErrorReporting
+namespace TAlex.Common.Diagnostics.Reporting
 {
     using System.Globalization;
     using System.Reflection;
@@ -19,7 +19,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+    #line 1 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ErrorReportHtmlTemplate : ErrorReportHtmlTemplateBase
     {
@@ -51,7 +51,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
 	<body>
 		<h3>Error report summary: ");
             
-            #line 26 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 26 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Assembly.GetEntryAssembly().GetTitle() + " " + Assembly.GetEntryAssembly().GetVersion()));
             
             #line default
@@ -59,28 +59,28 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             this.Write("</h2>\r\n\r\n\t\t<p>\r\n\t\t\t<h4>System Information</h4>\r\n\t\t\t<strong>Processor count:</stro" +
                     "ng> ");
             
-            #line 30 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 30 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.ProcessorCount));
             
             #line default
             #line hidden
             this.Write("<br />\r\n\t\t\t<strong>Processor architecture:</strong> ");
             
-            #line 31 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 31 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(SystemInfo.Current.ProcessorArchitecture));
             
             #line default
             #line hidden
             this.Write("<br />\r\n\t\t\t<strong>Total memory:</strong> ");
             
-            #line 32 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 32 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(SystemInfo.Current.TotalPhysicalMemoryText));
             
             #line default
             #line hidden
             this.Write("<br />\r\n\t\t\t<strong>Available memory:</strong> ");
             
-            #line 33 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 33 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(SystemInfo.Current.AvailablePhysicalMemoryText));
             
             #line default
@@ -88,21 +88,21 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             this.Write("<br />\r\n\t\t</p>\r\n\r\n\t\t<p>\r\n\t\t\t<h4>Environment Information</h4>\r\n\t\t\t<strong>Current " +
                     "culture:</strong> ");
             
-            #line 38 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 38 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(CultureInfo.CurrentCulture));
             
             #line default
             #line hidden
             this.Write("<br />\r\n\t\t\t<strong>OS:</strong> ");
             
-            #line 39 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 39 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.OSVersion));
             
             #line default
             #line hidden
             this.Write("<br />\r\n\t\t\t<strong>Machine name:</strong> ");
             
-            #line 40 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 40 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.MachineName));
             
             #line default
@@ -110,14 +110,14 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             this.Write("<br />\r\n\t\t</p>\r\n\r\n\t\t<p>\r\n\t\t\t<h4>Process Information</h4>\r\n\t\t\t<strong>Command line" +
                     ":</strong> ");
             
-            #line 45 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 45 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.CommandLine));
             
             #line default
             #line hidden
             this.Write("<br />\r\n\t\t\t<strong>Memory usage:</strong> ");
             
-            #line 46 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 46 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((ProcessInfo.Current.PrivateWorkingSet / 1024).ToString("N0") + " K"));
             
             #line default
@@ -125,7 +125,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             this.Write("<br />\r\n\t\t</p>\r\n\r\n\t\t<table>\r\n\t\t\t<tr class=\"odd-row\">\r\n\t\t\t\t<td width=\"150px\"><stro" +
                     "ng>Error type</strong></td><td>");
             
-            #line 51 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 51 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.GetType()));
             
             #line default
@@ -133,7 +133,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             this.Write("</td>\r\n\t\t\t</tr>\r\n\t\t\t<tr class=\"even-row\">\r\n\t\t\t\t<td><strong>Error source</strong><" +
                     "/td><td>");
             
-            #line 54 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 54 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.Source));
             
             #line default
@@ -141,7 +141,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             this.Write("</td>\r\n\t\t\t</tr>\r\n\t\t\t<tr class=\"odd-row\">\r\n\t\t\t\t<td><strong>Target site</strong></t" +
                     "d><td>");
             
-            #line 57 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 57 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.TargetSite));
             
             #line default
@@ -149,7 +149,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             this.Write("</td>\r\n\t\t\t</tr>\r\n\t\t\t<tr class=\"even-row\">\r\n\t\t\t\t<td><strong>Error message</strong>" +
                     "</td><td>");
             
-            #line 60 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 60 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.Message));
             
             #line default
@@ -157,28 +157,28 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             this.Write("</td>\r\n\t\t\t</tr>\r\n\t\t\t<tr class=\"odd-row\">\r\n\t\t\t\t<td><strong>Stack trace</strong></t" +
                     "d><td>");
             
-            #line 63 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 63 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.StackTrace));
             
             #line default
             #line hidden
             this.Write("</td>\r\n\t\t\t</tr>\r\n\t\t\t");
             
-            #line 65 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 65 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
  if (Model.TargetException.InnerException != null) { 
             
             #line default
             #line hidden
             this.Write("\t\t\t\t<tr class=\"even-row\">\r\n\t\t\t\t\t<td><strong>Inner exception</strong></td><td>");
             
-            #line 67 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 67 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.InnerException));
             
             #line default
             #line hidden
             this.Write("</td>\r\n\t\t\t\t</tr>\r\n\t\t\t");
             
-            #line 69 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+            #line 69 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
  } 
             
             #line default
@@ -187,7 +187,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 74 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportHtmlTemplate.tt"
+        #line 74 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportHtmlTemplate.tt"
 
 	/// <summary>
     /// Gets or sets the model of error report.

@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace TAlex.Common.Diagnostics.ErrorReporting
+namespace TAlex.Common.Diagnostics.Reporting
 {
     using System.Globalization;
     using TAlex.Common.Diagnostics;
@@ -17,7 +17,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+    #line 1 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "12.0.0.0")]
     public partial class ErrorReportPlainTextTemplate : ErrorReportPlainTextTemplateBase
     {
@@ -29,119 +29,119 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
         {
             this.Write("==System Information==\r\nProcessor count: ");
             
-            #line 5 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 5 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.ProcessorCount));
             
             #line default
             #line hidden
             this.Write("\r\nProcessor architecture: ");
             
-            #line 6 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 6 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(SystemInfo.Current.ProcessorArchitecture));
             
             #line default
             #line hidden
             this.Write("\r\nTotal memory: ");
             
-            #line 7 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 7 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(SystemInfo.Current.TotalPhysicalMemoryText));
             
             #line default
             #line hidden
             this.Write("\r\nAvailable memory: ");
             
-            #line 8 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 8 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(SystemInfo.Current.AvailablePhysicalMemoryText));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n==Environment Information==\r\nCurrent culture: ");
             
-            #line 11 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 11 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(CultureInfo.CurrentCulture));
             
             #line default
             #line hidden
             this.Write("\r\nOS: ");
             
-            #line 12 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 12 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.OSVersion));
             
             #line default
             #line hidden
             this.Write("\r\nMachine name: ");
             
-            #line 13 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 13 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.MachineName));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n==Process Information==\r\nCommand line: ");
             
-            #line 16 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 16 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.CommandLine));
             
             #line default
             #line hidden
             this.Write("\r\nMemory usage: ");
             
-            #line 17 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 17 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture((ProcessInfo.Current.PrivateWorkingSet / 1024).ToString("N0") + " K"));
             
             #line default
             #line hidden
             this.Write("\r\n\r\nError type: ");
             
-            #line 19 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 19 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.GetType()));
             
             #line default
             #line hidden
             this.Write("\r\nError source: ");
             
-            #line 20 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 20 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.Source));
             
             #line default
             #line hidden
             this.Write("\r\nTarget site: ");
             
-            #line 21 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 21 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.TargetSite));
             
             #line default
             #line hidden
             this.Write("\r\nError message: ");
             
-            #line 22 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 22 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.Message));
             
             #line default
             #line hidden
             this.Write("\r\nStack trace:\r\n");
             
-            #line 24 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 24 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.StackTrace));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 25 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 25 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
  if (Model.TargetException.InnerException != null) { 
             
             #line default
             #line hidden
             this.Write("Inner exception: ");
             
-            #line 26 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 26 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TargetException.InnerException));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 27 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+            #line 27 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
  } 
             
             #line default
@@ -149,7 +149,7 @@ namespace TAlex.Common.Diagnostics.ErrorReporting
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 28 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\ErrorReporting\ErrorReportPlainTextTemplate.tt"
+        #line 28 "D:\Development\Repos\TAlex\TAlex.Common\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
 
 	/// <summary>
     /// Gets or sets the model of error report.
