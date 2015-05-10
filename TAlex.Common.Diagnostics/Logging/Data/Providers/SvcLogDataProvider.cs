@@ -9,7 +9,7 @@ using System.Xml;
 using TAlex.Common.Diagnostics;
 
 
-namespace TAlex.Common.Diagnostics.LogData.Providers
+namespace TAlex.Common.Diagnostics.Logging.Data.Providers
 {
     public class SvcLogDataProvider : FileLogDataProvider
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 
 
-namespace TAlex.Common.Diagnostics.LogData.Providers
+namespace TAlex.Common.Diagnostics.Logging.Data.Providers
 {
     public interface ILogDataProvider
     {

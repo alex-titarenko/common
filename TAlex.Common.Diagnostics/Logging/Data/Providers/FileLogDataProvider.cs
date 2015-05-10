@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace TAlex.Common.Diagnostics.LogData.Providers
+namespace TAlex.Common.Diagnostics.Logging.Data.Providers
 {
     public abstract class FileLogDataProvider : ILogDataProvider
     {

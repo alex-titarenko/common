@@ -4,7 +4,7 @@ using System.Text;
 using TAlex.Common.Diagnostics;
 
 
-namespace TAlex.Common.Diagnostics.LogData
+namespace TAlex.Common.Diagnostics.Logging.Data
 {
     public class LogItem
     {

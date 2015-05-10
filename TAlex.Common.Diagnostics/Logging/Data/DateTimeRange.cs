@@ -1,7 +1,7 @@
 ﻿using System;
 
 
-namespace TAlex.Common.Diagnostics.LogData
+namespace TAlex.Common.Diagnostics.Logging.Data
 {
     public struct DateTimeRange
     {
