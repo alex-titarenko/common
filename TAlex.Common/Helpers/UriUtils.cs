@@ -5,7 +5,7 @@ using System.Linq;
 
 namespace TAlex.Common.Helpers
 {
-    public static class UrlUtils
+    public static class UriUtils
     {
         public static string Combine(params string[] uriParts)
         {
