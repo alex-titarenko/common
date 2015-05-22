@@ -5,7 +5,8 @@ Base class library for commonly occurring problems.
 
 ## Structure
 * **TAlex.Common** - contains different extensions for assembly, string, exression classes and etc.
-* **TAlex.Common.Diagnostics** - provides error reporting functionality for your apps.
+* **TAlex.Common.Diagnostics** - provides error reporting and logging functionality for your apps.
+* **TAlex.Common.Diagnostics.Providers** - provides WebRequestTraceListener, AzureTableTraceListener and AzureTableLogDataProvider.
 * **TAlex.Common.Configuration** - contains XmlSettingsProvider and ConfigurationHelper.
 
 ## Features
@@ -37,6 +38,7 @@ private class SimpleModel
 
     Install-Package TAlex.Common
     Install-Package TAlex.Common.Diagnostics
+    Install-Package TAlex.Common.Diagnostics.Providers
     Install-Package TAlex.Common.Configuration
 
 ## License

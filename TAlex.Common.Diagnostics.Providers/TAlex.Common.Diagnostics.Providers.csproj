@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="Logging\Data\Providers\AzureTableLogDataProvider.cs" />
     <Compile Include="Logging\Listeners\AzureTableTraceListener.cs" />
+    <Compile Include="Logging\Listeners\WebRequestTraceListener.cs" />
     <Compile Include="Models\TraceRecordTableEntity.cs" />
     <Compile Include="Models\TraceRecord.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

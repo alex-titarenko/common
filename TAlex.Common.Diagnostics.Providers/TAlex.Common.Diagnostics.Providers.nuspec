@@ -13,11 +13,12 @@
     <description>$description$</description>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2015 T-Alex Software</copyright>
-    <tags>Diagnostics Logging TraceListener Azure Table AzureTableTraceListener</tags>
+    <tags>Diagnostics Logging TraceListener Azure Table AzureTableTraceListener WebRequestTraceListener</tags>
 
     <dependencies>
 		<dependency id="TAlex.Common" />
         <dependency id="TAlex.Common.Diagnostics" />
+        <dependency id="WindowsAzure.Storage" />
 	</dependencies>
   </metadata>
 </package>
