@@ -63,7 +63,7 @@ namespace TAlex.Common.Extensions
 
         public static string ExtractTextFromHtml(this String source)
         {
-            return HtmlTagRegex.Replace(source, " ").Trim();
+            return (source != null) ? HtmlTagRegex.Replace(source, " ").Trim() : null;
         }
 
         /// <summary>

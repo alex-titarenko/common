@@ -188,6 +188,19 @@ namespace TAlex.Common.Tests.Extensions
             Assert.AreEqual(expected, actual);
         }
 
+        [Test]
+        public void ExtractTextFromHtml_Null_Null()
+        {
+            //arrange
+            string text = null;
+
+            //action
+            var actual = text.ExtractTextFromHtml();
+
+            //assert
+            Assert.IsNull(actual);
+        }
+
         #endregion
 
         #region CamelToRegular
