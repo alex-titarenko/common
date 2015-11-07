@@ -10,8 +10,6 @@ namespace TAlex.Common.Extensions
     /// </summary>
     public static class ListExtensions
     {
-        private const int ShuffleModifier = 10;
-
         private static Random _rand = new Random();
 
 
@@ -22,20 +20,18 @@ namespace TAlex.Common.Extensions
         /// <param name="source">An <see cref="System.Collections.Generic.IList{T}" /> for shuffling.</param>
         public static void Shuffle<T>(this IList<T> source)
         {
-            int itemsCount = source.Count;
-            int shuffleIters = itemsCount * ShuffleModifier;
-
-            for (int i = 0; i < shuffleIters; i++)
+            if (source == null)
             {
-                int n1 = _rand.Next(0, itemsCount);
-                int n2 = _rand.Next(0, itemsCount);
+                throw new ArgumentNullException("source", "Input array is null");
+            }
 
-                if (n1 != n2)
-                {
-                    T temp = source[n1];
-                    source[n1] = source[n2];
-                    source[n2] = temp;
-                }
+            for (var i = source.Count - 1; i > 0; i--)
+            {
+                var j = _rand.Next(0, i);
+
+                var temp = source[i];
+                source[i] = source[j];
+                source[j] = temp;
             }
         }
     }

@@ -14,19 +14,27 @@ namespace TAlex.Common.Tests.Extensions
         #region Shuffle
 
         [Test]
-        public void Shuffle_OrderedList_ShuffledList()
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void Shuffle_Null_ThrowArgumentNullException()
+        {
+            //action
+            ListExtensions.Shuffle<int>(null);
+        }
+
+        [Test]
+        public void Shuffle_OrderedArray_ShuffledArray()
         {
             //arrange
-            List<int> orderedList = Enumerable.Range(1, 10).ToList();
-            List<int> actual = Enumerable.Range(1, 10).ToList();
-            CollectionAssert.AreEqual(orderedList, actual);
+            var deck = Enumerable.Range(1, 52).ToArray();
 
             //action
-            actual.Shuffle();
+            deck.Shuffle();
 
             //assert
-            CollectionAssert.AreNotEqual(orderedList, actual);
-            CollectionAssert.AreEquivalent(orderedList, actual);
+            for (var i = 0; i < deck.Length; i++)
+            {
+                Assert.AreNotEqual(i + 1, deck[i]);
+            }
         }
 
         [Test]
