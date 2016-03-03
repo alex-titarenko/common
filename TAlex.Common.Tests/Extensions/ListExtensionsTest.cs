@@ -14,11 +14,13 @@ namespace TAlex.Common.Tests.Extensions
         #region Shuffle
 
         [Test]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void Shuffle_Null_ThrowArgumentNullException()
         {
             //action
-            ListExtensions.Shuffle<int>(null);
+            TestDelegate action = () => ListExtensions.Shuffle<int>(null);
+
+            //assert
+            Assert.Throws<ArgumentNullException>(action);
         }
 
         [Test]

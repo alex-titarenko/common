@@ -64,31 +64,29 @@ namespace TAlex.Common.Tests.Extensions
         #region Search
 
         [Test]
-        [ExpectedException(typeof(NullReferenceException))]
         public void Search_NullQuery_ThrowNullReferenceException()
         {
             //arrange
             string query = null;
 
             //action
-            IEnumerable<TestClass> actual = _testCollection.Search(query, _allPropertySelectors);
-            
+            TestDelegate action = () => _testCollection.Search(query, _allPropertySelectors);
+
             //assert
-            Assert.AreEqual(0, actual.Count());
+            Assert.Throws<NullReferenceException>(action);
         }
 
         [Test]
-        [ExpectedException(typeof(NullReferenceException))]
         public void Search_NullConditions_ThrowNullReferenceException()
         {
             //arrange
             string query = "word";
 
             //action
-            IEnumerable<TestClass> actual = _testCollection.Search(query, null);
+            TestDelegate action = () => { var result = _testCollection.Search(query, null).ToArray(); };
 
             //assert
-            Assert.AreEqual(0, actual.Count());
+            Assert.Throws<NullReferenceException>(action);
         }
 
         [Test]

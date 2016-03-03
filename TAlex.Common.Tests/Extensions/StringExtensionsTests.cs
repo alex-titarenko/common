@@ -57,7 +57,6 @@ namespace TAlex.Common.Tests.Extensions
         #region Cut
 
         [Test]
-        [ExpectedException(typeof(ArgumentOutOfRangeException))]
         public void Cut_NegativeLength_ThrowArgumentOutOfRangeException()
         {
             //arrange
@@ -65,7 +64,10 @@ namespace TAlex.Common.Tests.Extensions
             int length = -1;
 
             //action
-            text.Cut(length);
+            TestDelegate action = () => text.Cut(length);
+
+            //assert
+            Assert.Throws<ArgumentOutOfRangeException>(action);
         }
 
         [Test]

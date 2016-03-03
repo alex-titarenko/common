@@ -26,14 +26,13 @@ namespace TAlex.Common.Configuration.Tests
         }
 
         [Test]
-        [ExpectedException(typeof(InvalidCastException))]
         public void Get_TypedMissingConfiguration_ThrowInvalidCastException()
         {
             //action
-            int actual = ConfigurationHelper.Get<int>("UnknownSetting");
+            TestDelegate action = () => ConfigurationHelper.Get<int>("UnknownSetting");
 
             //assert
-            Assert.IsNull(actual);
+            Assert.Throws<InvalidCastException>(action);
         }
 
         [Test]
