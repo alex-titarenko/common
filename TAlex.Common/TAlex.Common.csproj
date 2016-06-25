@@ -45,6 +45,12 @@
     <Compile Include="Extensions\ObjectExtensions.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Helpers\ConvertEx.cs" />
+    <Compile Include="Helpers\Retries\Intervals\ConstantBackoffIntervalFunction.cs" />
+    <Compile Include="Helpers\Retries\Intervals\ExponentialBackoffIntervalFunction.cs" />
+    <Compile Include="Helpers\Retries\Intervals\IIntervalFunction.cs" />
+    <Compile Include="Helpers\Retries\RetryAgent.cs" />
+    <Compile Include="Helpers\Retries\RetriesExceededException.cs" />
+    <Compile Include="Helpers\Retries\RetryPolicy.cs" />
     <Compile Include="Helpers\UriUtils.cs" />
     <Compile Include="Models\AssemblyInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

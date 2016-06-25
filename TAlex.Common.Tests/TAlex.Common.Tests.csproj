@@ -52,6 +52,7 @@
     <Compile Include="Extensions\ObjectExtensionsTests.cs" />
     <Compile Include="Extensions\StringExtensionsTests.cs" />
     <Compile Include="Helpers\ConvertExTests.cs" />
+    <Compile Include="Helpers\Retries\RetryAgentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
