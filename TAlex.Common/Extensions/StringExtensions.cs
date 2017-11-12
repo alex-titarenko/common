@@ -93,6 +93,9 @@ namespace TAlex.Common.Extensions
         /// </summary>
         /// <param name="source">The singular noun.</param>
         /// <returns>plural string.</returns>
+        /// <remarks>
+        /// https://www.grammarly.com/blog/plural-nouns
+        /// </remarks>
         public static string Pluralize(this string source)
         {
             if (string.IsNullOrEmpty(source))
