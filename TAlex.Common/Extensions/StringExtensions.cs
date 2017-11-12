@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 
@@ -87,6 +86,131 @@ namespace TAlex.Common.Extensions
         public static string EncodeHtml(this String source)
         {
             return String.Join(String.Empty, source.Cast<char>().Select(x => String.Format("&#{0:D3};", (int)x)));
+        }
+
+        /// <summary>
+        /// Returns plural form of singular noun.
+        /// </summary>
+        /// <param name="source">The singular noun.</param>
+        /// <returns>plural string.</returns>
+        public static string Pluralize(this string source)
+        {
+            if (string.IsNullOrEmpty(source))
+            {
+                return source;
+            }
+
+            var irregularNouns = new Dictionary<string, string>
+            {
+                { "child", "children" },
+                { "goose", "geese" },
+                { "man", "men" },
+                { "woman", "women" },
+                { "tooth", "teeth" },
+                { "foot", "feet" },
+                { "mouse", "mice" },
+                { "person", "people" }
+            };
+
+            if (source.EndsWithIgnoreCase(irregularNouns.Keys.ToArray(), out string match))
+            {
+                return source.Substring(0, source.Length - match.Length) + irregularNouns[match];
+            }
+
+            if (source.EndsWithIgnoreCase("news", "sheep", "series", "species", "deer"))
+            {
+                return source;
+            }
+            else if (source.EndsWithIgnoreCase("us") && !source.EndsWithIgnoreCase("bus"))
+            {
+                return source.Substring(0, source.Length - 2) + "i";
+            }
+            if (source.EndsWithIgnoreCase("is"))
+            {
+                return source.Substring(0, source.Length - 2) + "es";
+            }
+            else if (source.EndsWithIgnoreCase("s", "ss", "sh", "ch", "x", "z"))
+            {
+                return source + "es";
+            }
+            else if (source.EndsWithIgnoreCase("f") && !source.EndsWithIgnoreCase("roof", "belief", "chef", "chief"))
+            {
+                return source.Substring(0, source.Length - 1) + "ves";
+            }
+            else if (source.EndsWithIgnoreCase("fe"))
+            {
+                return source.Substring(0, source.Length - 2) + "ves";
+            }
+            else if (source.EndsWithIgnoreCase("y") && !source.EndsWithIgnoreCase("ay", "ey", "iy", "oy", "uy"))
+            {
+                return source.Substring(0, source.Length - 1) + "ies";
+            }
+            else if (source.EndsWithIgnoreCase("o") && !source.EndsWithIgnoreCase("photo", "piano", "halo"))
+            {
+                return source + "es";
+            }
+            else if (source.EndsWithIgnoreCase("on"))
+            {
+                return source.Substring(0, source.Length - 2) + "a";
+            }
+
+            return source + 's';
+        }
+
+        /// <summary>
+        /// Determines whether the end of this string instance matches the specified strings
+        /// ignoring case.
+        /// </summary>
+        /// <param name="source">The source string.</param>
+        /// <param name="values">The string array to compare to the substring at the end of source string.</param>
+        /// <returns>true if the values parameter matches the end of source string; otherwise, false.</returns>
+        public static bool EndsWithIgnoreCase(this string source, params string[] values)
+        {
+            return EndsWith(source, StringComparison.OrdinalIgnoreCase, values);
+        }
+
+        /// <summary>
+        /// Determines whether the end of this string instance matches the specified strings
+        /// ignoring case.
+        /// </summary>
+        /// <param name="source">The source string.</param>
+        /// <param name="values">The string array to compare to the substring at the end of source string.</param>
+        /// <param name="match">Output parameter with comparison match string.</param>
+        /// <returns>true if the values parameter matches the end of source string; otherwise, false.</returns>
+        public static bool EndsWithIgnoreCase(this string source, string[] values, out string match)
+        {
+            foreach (var value in values)
+            {
+                if (source.EndsWith(value, StringComparison.OrdinalIgnoreCase))
+                {
+                    match = value;
+                    return true;
+                }
+            }
+
+            match = null;
+            return false;
+        }
+
+        /// <summary>
+        /// Determines whether the end of this string instance matches the specified strings
+        /// when compared using the specified comparison option.
+        /// </summary>
+        /// <param name="source">The source string.</param>
+        /// <param name="comparisonType">One of the enumeration values that determines how this string and value are compared.</param>
+        /// <param name="values">The string array to compare to the substring at the end of source string.</param>
+        /// <returns>true if the values parameter matches the end of source string; otherwise, false.</returns>
+        public static bool EndsWith(this string source, StringComparison comparisonType, params string[] values)
+        {
+            foreach (var value in values)
+            {
+                if (source.EndsWith(value, comparisonType))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

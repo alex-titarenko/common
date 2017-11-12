@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using TAlex.Common.Extensions;
 
@@ -286,6 +282,79 @@ namespace TAlex.Common.Tests.Extensions
         {
             //action
             var actual = source.EncodeHtml();
+
+            //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        #endregion
+
+        #region Pluralize
+
+        // 1. To make regular nouns plural, add ‑s to the end
+        [TestCase("cat", "cats")]
+        [TestCase("house", "houses")]
+        // 2. If the singular noun ends in ‑s, -ss, -sh, -ch, -x, or -z,
+        // add ‑es to the end to make it plural
+        [TestCase("truss", "trusses")]
+        [TestCase("bus", "buses")]
+        [TestCase("marsh", "marshes")]
+        [TestCase("lunch", "lunches")]
+        [TestCase("tax", "taxes")]
+        [TestCase("blitz", "blitzes")]
+        // 4. If the noun ends with ‑f or ‑fe,
+        // the f is often changed to ‑ve before adding the -s to form the plural version
+        [TestCase("wife", "wives")]
+        [TestCase("wolf", "wolves")]
+        // 4. Exceptions
+        [TestCase("roof", "roofs")]
+        [TestCase("belief", "beliefs")]
+        [TestCase("chef", "chefs")]
+        [TestCase("chief", "chiefs")]
+        // 5. If a singular noun ends in ‑y and the letter before the -y is a consonant,
+        // change the ending to ‑ies to make the noun plural
+        [TestCase("city", "cities")]
+        [TestCase("puppy", "puppies")]
+        [TestCase("property", "properties")]
+        [TestCase("category", "categories")]
+        // 6. If the singular noun ends in -y and the letter before the -y is a vowel,
+        // simply add an -s to make it plural
+        [TestCase("ray", "rays")]
+        [TestCase("boy", "boys")]
+        // 7. If the singular noun ends in ‑o, add ‑es to make it plural
+        [TestCase("potato", "potatoes")]
+        [TestCase("tomato", "tomatoes")]
+        // Exceptions
+        [TestCase("photo", "photos")]
+        [TestCase("piano", "pianos")]
+        [TestCase("halo", "halos")]
+        // 8. If the singular noun ends in ‑us, the plural ending is frequently ‑i
+        [TestCase("cactus", "cacti")]
+        [TestCase("focus", "foci")]
+        // 9. If the singular noun ends in ‑is, the plural ending is ‑es
+        [TestCase("analysis", "analyses")]
+        [TestCase("ellipsis", "ellipses")]
+        // 10. If the singular noun ends in ‑on, the plural ending is ‑a
+        [TestCase("phenomenon", "phenomena")]
+        [TestCase("criterion", "criteria")]
+        // 11. Some nouns don’t change at all when they’re pluralized
+        [TestCase("sheep", "sheep")]
+        [TestCase("series", "series")]
+        [TestCase("species", "species")]
+        [TestCase("deer", "deer")]
+        // 12. Plural noun rules for irregular nouns
+        [TestCase("child", "children")]
+        [TestCase("goose", "geese")]
+        [TestCase("man", "men")]
+        [TestCase("woman", "women")]
+        [TestCase("tooth", "teeth")]
+        [TestCase("foot", "feet")]
+        [TestCase("mouse", "mice")]
+        [TestCase("person", "people")]
+        public void Pluralize_Singular_Plural(string source, string expected)
+        {
+            //action
+            var actual = source.Pluralize();
 
             //assert
             Assert.AreEqual(expected, actual);
