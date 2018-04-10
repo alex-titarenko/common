@@ -29,64 +29,57 @@ namespace TAlex.Common.Diagnostics.Reporting
         {
             this.Write("==System Information==\r\nProcessor count: ");
             
-            #line 5 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
+            #line 6 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.ProcessorCount));
             
             #line default
             #line hidden
             this.Write("\r\nProcessor architecture: ");
             
-            #line 6 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
+            #line 7 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(SystemInfo.Current.ProcessorArchitecture));
             
             #line default
             #line hidden
             this.Write("\r\nTotal memory: ");
             
-            #line 7 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
+            #line 8 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(SystemInfo.Current.TotalPhysicalMemoryText));
             
             #line default
             #line hidden
             this.Write("\r\nAvailable memory: ");
             
-            #line 8 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
+            #line 9 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(SystemInfo.Current.AvailablePhysicalMemoryText));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n==Environment Information==\r\nCurrent culture: ");
             
-            #line 11 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
+            #line 12 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(CultureInfo.CurrentCulture));
             
             #line default
             #line hidden
             this.Write("\r\nOS: ");
             
-            #line 12 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
+            #line 13 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.OSVersion));
             
             #line default
             #line hidden
             this.Write("\r\nMachine name: ");
             
-            #line 13 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
+            #line 14 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Environment.MachineName));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n==Process Information==\r\nCommand line: ");
             
-            #line 16 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Environment.CommandLine));
-            
-            #line default
-            #line hidden
-            this.Write("\r\nMemory usage: ");
-            
             #line 17 "D:\Dev\Repos\TAlex\TAlex.Common\src\TAlex.Common.Diagnostics\Reporting\ErrorReportPlainTextTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture((ProcessInfo.Current.PrivateWorkingSet / 1024).ToString("N0") + " K"));
+            this.Write(this.ToStringHelper.ToStringWithCulture(Environment.CommandLine));
             
             #line default
             #line hidden

@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net451</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <RootNamespace>TAlex.Common.Diagnostics</RootNamespace>
     <AssemblyName>TAlex.Common.Diagnostics</AssemblyName>
     <Product>TAlex.Common.Diagnostics</Product>
-    <Version>2.0.0</Version>
+    <Version>3.0.0</Version>
     <Description>Set of diagnostic tools</Description>
     <PackageTags>Diagnostic Error Report Time Measurement</PackageTags>
     <Authors>Alex Titarenko</Authors>
@@ -16,11 +16,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Reporting\ErrorReportHtmlTemplate.tt">
+    <None Update="Reporting\ErrorReportHtmlTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ErrorReportHtmlTemplate.cs</LastGenOutput>
     </None>
-    <None Include="Reporting\ErrorReportPlainTextTemplate.tt">
+    <None Update="Reporting\ErrorReportPlainTextTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ErrorReportPlainTextTemplate.cs</LastGenOutput>
     </None>
@@ -38,14 +38,14 @@
       <DependentUpon>ErrorReportPlainTextTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-  
+
+  <ItemGroup>
+    <PackageReference Include="System.CodeDom" Version="4.4.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
+
   <ItemGroup>
     <ProjectReference Include="..\TAlex.Common\TAlex.Common.csproj" />
-  </ItemGroup>
-  
-  <ItemGroup>
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Extensions" />
   </ItemGroup>
   
   <ItemGroup>

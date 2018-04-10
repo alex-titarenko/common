@@ -2,6 +2,6 @@
 {
     public interface IErrorReportSender
     {
-        void Send(ErrorReportModel report);
+        void Send(ErrorReportModel report, string url);
     }
 }

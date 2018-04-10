@@ -1,4 +1,5 @@
 ﻿<#@ template language="C#" #>
+<#@ assembly name="TAlex.Common" #>
 <#@ import namespace="System.Globalization" #>
 <#@ import namespace="System.Reflection" #>
 <#@ import namespace="TAlex.Common.Diagnostics" #>
@@ -42,8 +43,7 @@
 
 		<p>
 			<h4>Process Information</h4>
-			<strong>Command line:</strong> <#= Environment.CommandLine #><br />
-			<strong>Memory usage:</strong> <#= (ProcessInfo.Current.PrivateWorkingSet / 1024).ToString("N0") + " K" #><br />
+			<strong>Command line:</strong> <#= Environment.CommandLine #>
 		</p>
 
 		<table>

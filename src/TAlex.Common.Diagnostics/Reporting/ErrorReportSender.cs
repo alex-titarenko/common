@@ -1,36 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Reflection;
 using System.Text;
-using System.Web.Script.Serialization;
 
 
 namespace TAlex.Common.Diagnostics.Reporting
 {
     public class ErrorReportSender : IErrorReportSender
     {
-        protected static readonly string ErrorReportUrlConfigKey = "TAlexConfiguration_ErrorReportUrl";
-
-
         #region IErrorReportSender Members
 
-        public void Send(ErrorReportModel report)
+        public void Send(ErrorReportModel report, string url)
         {
-            SendReport(CreateRequest(), SerializeReport(report));
+            SendReport(CreateRequest(url), SerializeReport(report));
         }
 
         #endregion
 
         #region Methods
 
-        private HttpWebRequest CreateRequest()
+        private HttpWebRequest CreateRequest(string url)
         {
-            var url = ConfigurationManager.AppSettings[ErrorReportUrlConfigKey];
-
             if (!String.IsNullOrEmpty(url))
             {
                 HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
@@ -55,7 +46,7 @@ namespace TAlex.Common.Diagnostics.Reporting
 
         private byte[] SerializeReport(ErrorReportModel report)
         {
-            var serializedReport = new JavaScriptSerializer().Serialize(report);
+            var serializedReport = JsonConvert.SerializeObject(report);
             return Encoding.UTF8.GetBytes(serializedReport);
         }
 

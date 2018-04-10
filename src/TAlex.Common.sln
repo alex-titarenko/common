@@ -3,19 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAlex.Common", "TAlex.Common\TAlex.Common.csproj", "{3DB33C07-E4AF-47DC-9484-1385F47B7E41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAlex.Common", "TAlex.Common\TAlex.Common.csproj", "{3DB33C07-E4AF-47DC-9484-1385F47B7E41}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{BB219410-A462-481E-8026-C95765CE0141}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAlex.Common.Tests", "TAlex.Common.Tests\TAlex.Common.Tests.csproj", "{91A52255-70D0-456D-AA79-044785E62FDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAlex.Common.Tests", "TAlex.Common.Tests\TAlex.Common.Tests.csproj", "{91A52255-70D0-456D-AA79-044785E62FDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAlex.Common.Diagnostics", "TAlex.Common.Diagnostics\TAlex.Common.Diagnostics.csproj", "{35E1F9C7-8391-433D-855A-AE81A18B3CFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAlex.Common.Diagnostics", "TAlex.Common.Diagnostics\TAlex.Common.Diagnostics.csproj", "{35E1F9C7-8391-433D-855A-AE81A18B3CFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAlex.Common.Configuration", "TAlex.Common.Configuration\TAlex.Common.Configuration.csproj", "{D9DFBF9F-9F59-4F8C-B914-2F051A5B0D1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAlex.Common.Configuration", "TAlex.Common.Configuration\TAlex.Common.Configuration.csproj", "{D9DFBF9F-9F59-4F8C-B914-2F051A5B0D1A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAlex.Common.Configuration.Tests", "TAlex.Common.Configuration.Tests\TAlex.Common.Configuration.Tests.csproj", "{D6255F76-1C26-45A2-BED9-EE0C9B938884}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TAlex.Common.Diagnostics.Providers", "TAlex.Common.Diagnostics.Providers\TAlex.Common.Diagnostics.Providers.csproj", "{7F588411-16A7-4875-B1C9-CD192B5EB7B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TAlex.Common.Configuration.Tests", "TAlex.Common.Configuration.Tests\TAlex.Common.Configuration.Tests.csproj", "{D6255F76-1C26-45A2-BED9-EE0C9B938884}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +41,6 @@ Global
 		{D6255F76-1C26-45A2-BED9-EE0C9B938884}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6255F76-1C26-45A2-BED9-EE0C9B938884}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6255F76-1C26-45A2-BED9-EE0C9B938884}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7F588411-16A7-4875-B1C9-CD192B5EB7B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7F588411-16A7-4875-B1C9-CD192B5EB7B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7F588411-16A7-4875-B1C9-CD192B5EB7B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7F588411-16A7-4875-B1C9-CD192B5EB7B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
