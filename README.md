@@ -1,5 +1,5 @@
 # TAlex.Common
-[![Build status](https://ci.appveyor.com/api/projects/status/43mm1ekpdtynfiks?svg=true)](https://ci.appveyor.com/project/alex-titarenko/common) !
+![Build](https://github.com/alex-titarenko/common/workflows/Build/badge.svg?branch=master)
 
 Base class library for commonly occurring problems.
 
