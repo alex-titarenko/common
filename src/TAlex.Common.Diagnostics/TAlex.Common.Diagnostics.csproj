@@ -4,12 +4,12 @@
     <RootNamespace>TAlex.Common.Diagnostics</RootNamespace>
     <AssemblyName>TAlex.Common.Diagnostics</AssemblyName>
     <Product>TAlex.Common.Diagnostics</Product>
-    <Version>3.0.0</Version>
+    <Version>3.0.1</Version>
     <Description>Set of diagnostic tools</Description>
     <PackageTags>Diagnostic Error Report Time Measurement</PackageTags>
     <Authors>Alex Titarenko</Authors>
-    <PackageProjectUrl>https://github.com/T-Alex/Common</PackageProjectUrl>
-    <Copyright>Copyright 2018 Alex Titarenko</Copyright>
+    <PackageProjectUrl>https://github.com/alex-titarenko/common</PackageProjectUrl>
+    <Copyright>Copyright 2020 Alex Titarenko</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <NoWarn>1591</NoWarn>

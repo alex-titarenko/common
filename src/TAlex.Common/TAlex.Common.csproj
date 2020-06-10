@@ -4,12 +4,12 @@
     <RootNamespace>TAlex.Common</RootNamespace>
     <AssemblyName>TAlex.Common</AssemblyName>
     <Product>TAlex.Common</Product>
-    <Version>2.1.0</Version>
+    <Version>2.1.1</Version>
     <Description>Base class library for commonly occurring problems</Description>
     <PackageTags>UndoCommand Extensions Assembly Info</PackageTags>
     <Authors>Alex Titarenko</Authors>
-    <PackageProjectUrl>https://github.com/T-Alex/Common</PackageProjectUrl>
-    <Copyright>Copyright 2018 Alex Titarenko</Copyright>
+    <PackageProjectUrl>https://github.com/alex-titarenko/common</PackageProjectUrl>
+    <Copyright>Copyright 2020 Alex Titarenko</Copyright>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
