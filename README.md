@@ -1,5 +1,5 @@
 # TAlex.Common
-![Build](https://github.com/alex-titarenko/common/workflows/Build/badge.svg?branch=master)
+![Build](https://github.com/alex-titarenko/common/workflows/Build/badge.svg?branch=main)
 
 Base class library for commonly occurring problems.
 
